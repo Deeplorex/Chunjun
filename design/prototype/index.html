@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>纯钧</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23080a0c' width='32' height='32'/%3E%3Cpath stroke='%23eef3f4' stroke-width='1' d='M16 3v18M12 21h8'/%3E%3Ccircle cx='22' cy='8' r='0.8' fill='%23f0e2d4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-phase="entry" data-mode="compress" data-drag="0">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="spine" aria-hidden="true"></div>
+  <div class="specks" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="lotus"></i></div>
+
+  <header class="bar">
+    <div class="mark">
+      <p class="series">神兵系列</p>
+      <div class="name-row">
+        <h1>纯钧</h1>
+        <p class="epithet">去冗留华</p>
+      </div>
+    </div>
+    <nav class="modes" aria-label="模式">
+      <button type="button" data-mode="compress" aria-pressed="true">压缩</button>
+      <button type="button" data-mode="convert" aria-pressed="false">转换</button>
+      <button type="button" data-mode="crop" aria-pressed="false">裁剪</button>
+      <span class="mode-line" aria-hidden="true"></span>
+    </nav>
+    <div class="seal">
+      <strong>本地</strong>
+      <span>图片不离开这台设备</span>
+    </div>
+  </header>
+
+  <div class="studio">
+    <section class="stage" id="stage">
+      <div class="pond" id="pond">
+        <div class="pond-water" aria-hidden="true"></div>
+        <div class="ripples" id="ripples"></div>
+        <div class="pond-blade" aria-hidden="true"></div>
+        <div class="pond-copy">
+          <p class="kicker">置入</p>
+          <h2>置入图片</h2>
+          <p class="pond-sub">拖入、粘贴，或选择文件与文件夹。</p>
+          <p class="formats">JPG · JPEG · PNG · WEBP · GIF · SVG · AVIF · JXL · HEIC · HEIF</p>
+        </div>
+        <div class="pond-actions">
+          <button type="button" class="btn primary" id="pick-files">选择图片</button>
+          <button type="button" class="btn" id="pick-dir">选择文件夹</button>
+          <button type="button" class="btn ghost" id="load-samples">查看样张</button>
+        </div>
+        <p class="pond-note">处理在浏览器内完成。无账号，无水印，不上传。</p>
+      </div>
+
+      <div class="workspace" id="workspace">
+        <div class="stage-head">
+          <div>
+            <p class="file-name" id="file-name">—</p>
+            <p class="file-sub" id="file-sub"></p>
+          </div>
+          <div class="readouts" id="readouts"></div>
+        </div>
+        <div class="viewer" id="viewer">
+          <div class="fit" id="fit">
+            <canvas id="cv-after"></canvas>
+            <canvas id="cv-before"></canvas>
+            <canvas id="cv-crop"></canvas>
+            <span class="tag before" id="tag-before">原图</span>
+            <span class="tag after" id="tag-after">预览</span>
+            <div class="wipe" id="wipe" role="slider" aria-label="原图与预览的分界" aria-valuemin="0" aria-valuemax="100" tabindex="0">
+              <div class="wipe-line"></div>
+              <div class="wipe-notch"><span>原图</span><span id="wipe-after">预览</span></div>
+            </div>
+            <div id="sheen"></div>
+            <div class="shade" id="shade-t"></div>
+            <div class="shade" id="shade-b"></div>
+            <div class="shade" id="shade-l"></div>
+            <div class="shade" id="shade-r"></div>
+            <div class="frame" id="frame">
+              <div class="thirds"></div>
+              <span class="handle nw" data-h="nw"></span>
+              <span class="handle n" data-h="n"></span>
+              <span class="handle ne" data-h="ne"></span>
+              <span class="handle e" data-h="e"></span>
+              <span class="handle se" data-h="se"></span>
+              <span class="handle s" data-h="s"></span>
+              <span class="handle sw" data-h="sw"></span>
+              <span class="handle w" data-h="w"></span>
+              <em class="frame-size" id="frame-size"></em>
+            </div>
+            <div class="fail-plate" id="fail-plate" hidden>
+              <p class="kicker">未能落下</p>
+              <h3>失败</h3>
+              <p class="reason" id="fail-reason"></p>
+              <p id="fail-detail"></p>
+              <button type="button" class="btn" id="fail-retry">重试</button>
+            </div>
+            <div class="banner" id="banner" hidden></div>
+            <div class="star-track stage-track" id="stage-track" hidden>
+              <div class="rail"></div>
+              <div class="fill" id="stage-fill"></div>
+              <i></i><i></i><i></i>
+              <span class="pct" id="stage-pct"></span>
+            </div>
+          </div>
+        </div>
+        <div class="stage-foot">
+          <div class="zoom" id="zoom">
+            <button type="button" data-zoom="fit" aria-pressed="true">适应</button>
+            <button type="button" data-zoom="100" aria-pressed="false">100%</button>
+            <button type="button" data-zoom="200" aria-pressed="false">200%</button>
+            <span id="zoom-label">适应</span>
+          </div>
+          <p class="hint" id="hint">H 按住看原图 · 双击刃线回中线 · 方向键移动选区</p>
+        </div>
+      </div>
+      <div class="veil" id="veil">
+        <div class="pond-blade" aria-hidden="true"></div>
+        <div class="ripples" id="veil-ripples"></div>
+        <p>松开以置入</p>
+      </div>
+      <div class="notice" id="notice" hidden></div>
+    </section>
+
+    <aside class="inscription" id="inscription">
+      <div class="panel" id="panel-compress">
+        <h2 class="panel-title">压缩</h2>
+        <div class="field" id="quality-field">
+          <div class="field-label"><span>质量</span><span class="eng" id="engine-label">MozJPEG</span></div>
+          <div class="readout" id="quality-readout">85</div>
+          <input type="range" id="quality" min="1" max="100" value="85" aria-label="质量">
+          <p class="help" id="quality-help">从 85 起。压缩不改变像素尺寸。</p>
+        </div>
+        <div class="field" id="png-field" hidden>
+          <div class="field-label"><span>优化等级</span><span class="eng">OxiPNG</span></div>
+          <div class="readout" id="png-readout">2</div>
+          <input type="range" id="png-level" min="0" max="6" step="1" value="2" aria-label="优化等级">
+          <p class="help">无损。只去掉冗余，不改画面。</p>
+        </div>
+        <div class="field" id="gif-field" hidden>
+          <div class="field-label"><span>优化等级</span><span class="eng">gifsicle</span></div>
+          <div class="readout" id="gif-level-readout">2</div>
+          <input type="range" id="gif-level" min="1" max="3" step="1" value="2" aria-label="GIF 优化等级">
+          <div class="field-label" style="margin-top:12px"><span>有损</span><span id="gif-lossy-label">0</span></div>
+          <input type="range" id="gif-lossy" min="0" max="100" value="0" aria-label="GIF 有损">
+          <p class="help" id="gif-help">不损伤颜色。</p>
+        </div>
+        <div class="field" id="svg-field" hidden>
+          <div class="field-label"><span>结构</span><span class="eng">svgo</span></div>
+          <p class="help">只去掉冗余，不栅格化。以 SVGO 结果为准。</p>
+        </div>
+        <div class="field" id="blocked-field" hidden>
+          <p class="help warn" id="blocked-help"></p>
+          <button type="button" class="btn slim" id="goto-convert">改用转换</button>
+        </div>
+        <div class="seg" id="method-seg" style="margin-bottom:14px">
+          <button type="button" data-method="quality" aria-pressed="true">按质量</button>
+          <button type="button" data-method="size" aria-pressed="false">按体积</button>
+        </div>
+        <div class="field" id="size-field" hidden>
+          <div class="field-label"><span>目标体积</span></div>
+          <div class="presets" id="size-presets">
+            <button type="button" data-kb="100">100KB</button>
+            <button type="button" data-kb="200" aria-pressed="true">200KB</button>
+            <button type="button" data-kb="500">500KB</button>
+            <button type="button" data-kb="1024">1MB</button>
+            <button type="button" data-kb="2048">2MB</button>
+            <button type="button" data-kb="custom">自定义</button>
+          </div>
+          <label class="custom-row">KB
+            <input id="custom-kb" type="number" min="1" max="20480" value="200" aria-label="自定义 KB">
+          </label>
+          <div class="field-label" style="margin-top:12px"><span>最低质量</span><span id="minq-label">40</span></div>
+          <input type="range" id="min-quality" min="1" max="90" value="40" aria-label="最低质量">
+          <label class="check"><input type="checkbox" id="allow-scale" checked>最低质量仍超出时，允许缩小</label>
+          <p class="help" id="size-note"></p>
+        </div>
+        <p class="help" id="mix-note" hidden></p>
+        <label class="check"><input type="checkbox" id="strip-meta" checked>去除元数据</label>
+        <p class="help" id="meta-help">地理位置始终剔除。关闭后保留方向、色彩与版权。</p>
+      </div>
+
+      <div class="panel" id="panel-convert" hidden>
+        <h2 class="panel-title">转换</h2>
+        <div class="field">
+          <div class="field-label"><span>输出格式</span><span class="eng" id="convert-engine">libwebp</span></div>
+          <div class="formats-pick" id="format-pick">
+            <button type="button" data-fmt="jpg">JPG</button>
+            <button type="button" data-fmt="png">PNG</button>
+            <button type="button" data-fmt="webp" aria-pressed="true">WebP</button>
+            <button type="button" data-fmt="avif">AVIF</button>
+            <button type="button" data-fmt="gif">GIF</button>
+          </div>
+        </div>
+        <div class="field" id="convert-quality-field">
+          <div class="field-label"><span>质量</span></div>
+          <div class="readout" id="convert-quality-readout">80</div>
+          <input type="range" id="convert-quality" min="1" max="100" value="80" aria-label="转换质量">
+          <p class="help" id="convert-quality-help"></p>
+        </div>
+        <div class="field" id="anim-field" hidden>
+          <label class="check"><input type="checkbox" id="keep-anim" checked>保留动画</label>
+          <p class="help" id="anim-help"></p>
+        </div>
+        <div class="field" id="matte-field" hidden>
+          <div class="field-label"><span>底色</span></div>
+          <div class="seg" id="matte-seg">
+            <button type="button" data-matte="ink" aria-pressed="true">墨色</button>
+            <button type="button" data-matte="white" aria-pressed="false">白色</button>
+          </div>
+        </div>
+        <div class="field" id="svg-width-field" hidden>
+          <div class="field-label"><span>栅格宽度</span></div>
+          <label class="svg-row">PX
+            <input id="svg-width" type="number" min="1" max="4096" value="1600" aria-label="栅格宽度">
+          </label>
+          <p class="help">最长边不超过 4096。高度按比例。</p>
+        </div>
+        <label class="check"><input type="checkbox" id="strip-meta-2" checked>去除元数据</label>
+        <p class="help" id="meta-help-2">地理位置始终剔除。关闭后保留方向、色彩与版权。</p>
+      </div>
+
+      <div class="panel" id="panel-crop" hidden>
+        <h2 class="panel-title">裁剪</h2>
+        <div class="field">
+          <div class="field-label"><span>比例</span></div>
+          <div class="ratios" id="ratios">
+            <button type="button" data-ratio="free" aria-pressed="true">自由</button>
+            <button type="button" data-ratio="1">1:1</button>
+            <button type="button" data-ratio="0.8">4:5</button>
+            <button type="button" data-ratio="0.75">3:4</button>
+            <button type="button" data-ratio="1.5">3:2</button>
+            <button type="button" data-ratio="1.333333">4:3</button>
+            <button type="button" data-ratio="1.777778">16:9</button>
+            <button type="button" data-ratio="0.5625">9:16</button>
+            <button type="button" data-ratio="1.91">1.91:1</button>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field-label"><span>用途</span></div>
+          <div class="socials" id="socials">
+            <button type="button" data-social="ig-post">Instagram 帖子</button>
+            <button type="button" data-social="ig-portrait">Instagram 竖图</button>
+            <button type="button" data-social="ig-story">Instagram 故事</button>
+            <button type="button" data-social="yt">YouTube 封面</button>
+            <button type="button" data-social="xhs">小红书</button>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field-label"><span>像素帧</span></div>
+          <div class="pixel-row">
+            <label>宽 <input id="out-w" type="number" min="1" aria-label="导出宽度"></label>
+            <label>高 <input id="out-h" type="number" min="1" aria-label="导出高度"></label>
+          </div>
+          <p class="help" id="pixel-note">默认即选区像素，不放大。</p>
+        </div>
+        <div class="field">
+          <div class="field-label"><span>摆正</span><span id="straighten-label">0.0°</span></div>
+          <div class="rotate-row">
+            <button type="button" id="rot-l">左转 90°</button>
+            <button type="button" id="rot-r">右转 90°</button>
+          </div>
+          <input type="range" id="straighten" min="-15" max="15" step="0.1" value="0" aria-label="微调角度" style="margin-top:8px">
+        </div>
+        <div class="field" id="raster-field" hidden>
+          <div class="field-label"><span>栅格宽度</span></div>
+          <label class="svg-row">PX
+            <input id="raster-w" type="number" min="1" max="4096" value="1600" aria-label="裁剪前栅格宽度">
+          </label>
+          <button type="button" class="btn slim" id="do-raster" style="margin-top:8px">栅格化后裁剪</button>
+          <p class="help">SVG 需先栅格化，才能下刀。</p>
+        </div>
+        <label class="check"><input type="checkbox" id="crop-png" checked>无损 PNG</label>
+        <p class="help" id="crop-out-help">关闭后沿用原格式。JPG 会再编码，质量 95。</p>
+        <button type="button" class="btn slim" id="reset-crop">重置选区</button>
+        <div class="seg" id="view-seg" style="margin-top:12px" hidden>
+          <button type="button" data-view="crop" aria-pressed="true">选区</button>
+          <button type="button" data-view="result" aria-pressed="false">成品</button>
+        </div>
+      </div>
+
+      <div class="panel-foot">
+        <div id="summary" hidden>
+          <p class="summary-title">成品</p>
+          <p class="summary-num" id="summary-num"></p>
+          <p class="summary-sub" id="summary-sub"></p>
+        </div>
+        <button type="button" class="btn primary" id="run-btn">开始处理</button>
+        <div class="foot-row">
+          <button type="button" class="btn" id="download-one" disabled>下载此张</button>
+          <button type="button" class="btn" id="download-zip" disabled>打包下载</button>
+        </div>
+        <p class="keep">原文件不会被改写</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="queue" id="queue">
+    <div class="queue-bar">
+      <div class="queue-count" id="queue-count"></div>
+      <div class="queue-actions">
+        <button type="button" class="btn slim" id="remove-one">移除</button>
+        <button type="button" class="btn slim" id="clear-done">清除已完成</button>
+        <button type="button" class="btn slim" id="clear-all">清空</button>
+      </div>
+    </div>
+    <div class="queue-list" id="queue-list"></div>
+  </section>
+
+  <div class="keys" id="keys" hidden>
+    <article>
+      <h3>按键</h3>
+      <ul>
+        <li><span>压缩 / 转换 / 裁剪</span><kbd>1 2 3</kbd></li>
+        <li><span>选择图片</span><kbd>Ctrl O</kbd></li>
+        <li><span>选择文件夹</span><kbd>Ctrl Shift O</kbd></li>
+        <li><span>粘贴</span><kbd>Ctrl V</kbd></li>
+        <li><span>开始处理</span><kbd>Ctrl Enter</kbd></li>
+        <li><span>停止</span><kbd>Esc</kbd></li>
+        <li><span>移除当前</span><kbd>Delete</kbd></li>
+        <li><span>看全幅原图</span><kbd>按住 H</kbd></li>
+        <li><span>移动分界</span><kbd>← →</kbd></li>
+        <li><span>移动选区</span><kbd>方向键</kbd></li>
+        <li><span>缩放</span><kbd>+ − 0</kbd></li>
+        <li><span>关闭此层</span><kbd>?</kbd></li>
+      </ul>
+    </article>
+  </div>
+
+  <input type="file" id="file-input" multiple hidden accept=".jpg,.jpeg,.jfif,.png,.webp,.gif,.svg,.avif,.jxl,.heic,.heif,image/*">
+  <input type="file" id="dir-input" multiple hidden webkitdirectory>
+  <script src="app.js"></script>
+</body>
+</html>
