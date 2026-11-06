@@ -1,0 +1,31 @@
+name: Unsigned desktop preview
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: rustup toolchain install 1.98.0 --profile minimal --component rustfmt --component clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm quality
+      - run: pnpm desktop:build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunjun-windows-unsigned-preview
+          path: src-tauri/target/release/chunjun.exe
+          if-no-files-found: error

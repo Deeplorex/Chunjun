@@ -1,0 +1,15 @@
+const fs=require('fs');
+let p=JSON.parse(fs.readFileSync('design/product-scope.json','utf8'));
+p.screens=p.screens.map(s=>s.replace('04 标识／检测证据','04 水印与声明／检测证据').replace('05 标识／删除预览','05 水印与声明／明水印删除').replace('06 标识／补充与改写','06 水印与声明／明水印补充与改写'));
+fs.writeFileSync('design/product-scope.json',JSON.stringify(p,null,2)+'\n');
+let h=fs.readFileSync('design/make-handoff.cjs','utf8');
+h=h.replace("'目标体积未达标'];","'目标体积未达标','元数据声明','元数据删除','用途明水印'];");
+h=h.replace("'质量下限与目标体积的恢复路径'];","'质量下限与目标体积的恢复路径','结构化声明与独立元数据读写','仅移除选中的声明，保留其他元数据','证件复印件用途标注与斜向平铺'];");
+h=h.replace('56 项功能 · 13 个关键界面','58 项功能 · 16 个关键界面');
+h=h.replace('AIGC 标识能力按证据类型定义：可见标识、文件字段、签名内容凭证、隐形水印。','标识分为明水印与元数据声明。用途、版权、品牌和 AIGC 均可作为用途；元数据读写无需 AI 模型。');
+fs.writeFileSync('design/make-handoff.cjs',h);
+let readme=fs.readFileSync('README.md','utf8').replace('56 项功能','58 项功能').replace('13 个关键界面','16 个关键界面').replace('AIGC 标识四个工作区','水印与声明四个工作区');
+if(!readme.includes('用途水印'))readme+='\n水印与声明包含两个并列入口：明水印（用途、版权、品牌与 AIGC 提示）和元数据声明（通用来源与结构化 AIGC 声明）。用途水印提供证件复印件模板、斜向平铺、透明度与可选日期；元数据读写无需 AI 模型。\n';
+fs.writeFileSync('README.md',readme);
+let snippet=fs.readFileSync('design/figma-watermark-update.js','utf8').replace("if(n.name==='删除')await n.setReactionsAsync","if(n.name==='删除'&&p===ep)await n.setReactionsAsync");fs.writeFileSync('design/figma-watermark-update.js',snippet);
+require('./make-handoff.cjs');

@@ -1,0 +1,15 @@
+const fs=require('fs');
+const figma=JSON.parse(fs.readFileSync('design/figma-state.json','utf8')),brand=JSON.parse(fs.readFileSync('design/brand-figma-state.json','utf8'));
+figma.pages.brand=brand.pageId;figma.brand=brand;fs.writeFileSync('design/figma-state.json',JSON.stringify(figma,null,2)+'\n');
+let p=JSON.parse(fs.readFileSync('design/product-scope.json','utf8'));
+p.brand={concept:'叠帧 · 方寸',mark:'相对取景折角与中央像素',assetPath:'assets/brand',iconPath:'assets/icons',logoPolicy:'不使用剑形；以图像画框的方形构图与湛卢区分',uiIcons:48,filetypeIcons:8,figmaPage:brand.pageId};
+fs.writeFileSync('design/product-scope.json',JSON.stringify(p,null,2)+'\n');
+let scope=fs.readFileSync('design/make-scope.cjs','utf8').replace('品牌只在名称与简洁剑形符号中表达。','品牌采用取景折角与中央像素组成的「叠帧·方寸」标志，与湛卢的剑形区分。');fs.writeFileSync('design/make-scope.cjs',scope);
+let gen=fs.readFileSync('design/figma-screens.js','utf8');
+gen=gen.replace("sword:'<path d=\"M12 2l4 5-4 10-4-10zM6 16l12 0M12 17v5M9 22h6\"/>'","brand:'<path d=\"M9.5 4H18C19.105 4 20 4.895 20 6V14.5H17V7H9.5ZM4 9.5H7V17H14.5V20H6C4.895 20 4 19.105 4 18ZM9.5 9.5H14.5V14.5H9.5Z\" fill=\"#276650\" stroke=\"none\"/>'").replaceAll("'sword'","'brand'");
+fs.writeFileSync('design/figma-screens.js',gen);
+let handoff=fs.readFileSync('design/make-handoff.cjs','utf8');if(!handoff.includes('../assets/brand/index.html'))handoff=handoff.replace('<a href="纯钧-完整功能清单.html">完整功能清单</a>','<a href="纯钧-完整功能清单.html">完整功能清单</a><a href="../assets/brand/index.html">Logo 与图标资产</a>');fs.writeFileSync('design/make-handoff.cjs',handoff);
+let readme=fs.readFileSync('README.md','utf8');if(!readme.includes('Chunjun-Brand-Assets-v1.zip'))readme+='\n品牌已更新为「叠帧·方寸」，以取景折角与中央像素区别于湛卢的剑形。\n\n- [Logo 与图标资产预览](assets/brand/index.html)\n- [完整资产包 ZIP](Chunjun-Brand-Assets-v1.zip)\n- [Figma 品牌规范](https://www.figma.com/design/A1vGeie8es1ZWYTU8dJnIQ?node-id=37-260)\n\n资产包含标准、单色、反白与小尺寸主标，横竖转曲组合标，16–1024px PNG、Windows ICO、macOS ICNS，48 枚功能图标与 8 类图片文件图标。\n';fs.writeFileSync('README.md',readme);
+const aliases={jpeg:'jpg.svg',jpg:'jpg.svg',png:'png.svg',webp:'webp.svg',avif:'avif.svg',heic:'heic.svg',heif:'heic.svg',tif:'tiff.svg',tiff:'tiff.svg',gif:'gif.svg',svg:'svg.svg',bmp:'../../icons/file.svg',default:'../../icons/file.svg'};
+fs.writeFileSync('assets/brand/filetypes/index.json',JSON.stringify(aliases,null,2)+'\n');
+require('./make-handoff.cjs');

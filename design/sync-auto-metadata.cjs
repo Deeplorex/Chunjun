@@ -1,0 +1,11 @@
+const fs=require('fs');
+const s=JSON.parse(fs.readFileSync('design/figma-state.json','utf8'));
+s.autoMetadataRevision=JSON.parse(fs.readFileSync('design/auto-metadata-revision.json','utf8'));
+fs.writeFileSync('design/figma-state.json',JSON.stringify(s,null,2)+'\n');
+const p=JSON.parse(fs.readFileSync('design/product-scope.json','utf8'));
+p.providerTargets.find(r=>r.vendor==='Midjourney').evidence='官方确认文件内来源标记；离线读取与官方联网核验分开，各出口待原始样本验收';
+p.metadataContract.providerIdentity+='厂商编码仅按已验证的本地映射转换名称，未知编码显示原值，不猜测厂商。';
+fs.writeFileSync('design/product-scope.json',JSON.stringify(p,null,2)+'\n');
+let h=fs.readFileSync('design/make-handoff.cjs','utf8').replace('结构化声明与独立元数据读写','自动识别来源平台、沿用声明与一键处理');fs.writeFileSync('design/make-handoff.cjs',h);
+let readme=fs.readFileSync('README.md','utf8');if(!readme.includes('自动识别平台元数据'))readme+='\n元数据默认自动识别平台元数据并沿用已有声明，原始字段收在高级选项中。首版适配目标包括即梦／豆包、通义万相、混元、文心生图、可灵／可图、ChatGPT、Gemini、Firefly 和 Midjourney；逐平台、下载入口与格式使用原始样本验收，当前为设计范围，尚未实现兼容引擎。\n';fs.writeFileSync('README.md',readme);
+require('./make-handoff.cjs');

@@ -1,0 +1,16 @@
+const root=await figma.getNodeByIdAsync('25:121');const removed=[],changed=[];
+for(const id of ['25:220','25:264']){const n=await figma.getNodeByIdAsync(id);n.remove();removed.push(id);}
+const ss=frame(root,'Automatic metadata summary',400,112,696,768,'paper');label(ss,'山湖晨雾.jpg',28,24,'label');badgeAt(ss,'已读取声明',548,24);
+const card=auto(ss,'Automatic provider detection',640,644,'VERTICAL','surface',24,18);card.x=28;card.y=78;
+text(card,'已自动读取平台声明','group');text(card,'界面演示 · 来源信息取自文件，无需手动填写。','caption','muted',592);
+const provider=auto(card,'Provider summary',592,82,'VERTICAL','soft',14,4);text(provider,'Adobe Firefly','title','accent');text(provider,'内容凭证 C2PA · 发行方 Adobe Inc.','caption','accent');
+function readonly(p,k,v){const row=auto(p,'Read-only / '+k,592,34,'HORIZONTAL',null,0,16);const left=auto(row,'Field label',160,34,'HORIZONTAL',null,0,0);text(left,k,'caption','muted');text(row,v,'body');}
+readonly(card,'生成属性','已声明使用生成式 AI');readonly(card,'来源平台','从内容凭证读取');readonly(card,'原始内容编号','沿用文件内原值，逐张保留');readonly(card,'凭证状态','已读取；签名验证单独展示');
+const info=auto(card,'Automatic metadata behavior',592,96,'VERTICAL','paper',14,8);text(info,'混合平台图片会各自识别，无需统一填写厂商参数。','caption','muted',564);text(info,'未提供的字段标记为缺失，默认不要求补全。','caption','muted',564);text(info,'更多字段和原始记录收在高级选项中。','caption','muted',564);
+button(card,'高级字段与原始记录','Secondary',240,11);text(card,'可解析声明与可信来源分开展示；导出后再次校验。','caption','muted',592);
+label(ss,'规则库随安装包提供 · 日常识别和处理不依赖网络',28,724,'caption','muted');
+const p=panel(root,'自动处理','默认无需填写平台、厂商编码或内容编号');segments(p,['保留声明','补充声明'],'保留声明');field(p,'缺失声明时','添加通用 AI 用户声明   ⌄');check(p,'自动识别来源平台');check(p,'沿用原始内容编号');check(p,'导出后重新检查');note(p,'声明丢失时显示“来源无法确认”。通用用户声明不会冒充原厂记录。','soft',92);button(p,'高级字段与原始记录','Secondary',296,11);separator(p);sectionTitle(p,'首版适配范围');text(p,'即梦 / 豆包 · 通义万相 · 混元\n文心生图 · 可灵 / 可图\nChatGPT · Gemini · Firefly\nMidjourney','caption','muted',296);text(p,'按平台、下载入口与格式逐项验收。','caption','muted',296);
+for(const t of root.findAllWithCriteria({types:['TEXT']})){if(t.characters==='在图片上标注，或在文件内写入声明。'){t.characters='自动识别平台，默认沿用已有声明。';changed.push(t.id);}if(t.characters==='元数据声明待写入 · 图片画面不变'){t.characters='平台声明已读取 · 保留并导出副本';changed.push(t.id);}}
+const scan=await figma.getNodeByIdAsync('11:732');for(const t of scan.findAllWithCriteria({types:['TEXT']})){const m={'已读取 AIGC 声明':'已自动解析 AIGC 声明','生成属性：属于 AI 生成合成\n来源：example-studio\n制作编号：asset-001':'生成属性：属于 AI 生成合成\n来源字段：example-studio\n来源平台：无法确认','读取声明无需 AI 模型 · 明水印可单独识别与处理':'自动读取已有声明 · 无需输入厂商字段'};if(m[t.characters]){t.characters=m[t.characters];changed.push(t.id);}}
+for(const l of links){const n=await figma.getNodeByIdAsync(l.id);await n.setReactionsAsync([{trigger:{type:'ON_CLICK'},actions:[{type:'NODE',destinationId:state.screens.find(f=>f.index===l.target).id,navigation:'NAVIGATE',transition:null}]}]);changed.push(n.id);}
+const all=figma.currentPage.findAll(()=>true);return{createdNodeIds:[...new Set(made)],mutatedNodeIds:[...new Set(changed),root.id],removedNodeIds:removed,screenId:root.id,typeCounts:all.reduce((o,n)=>(o[n.type]=(o[n.type]||0)+1,o),{}),overflow:all.filter(n=>n.parent?.type==='FRAME'&&n.parent.layoutMode!=='NONE'&&(n.y+n.height>n.parent.height+2||n.x+n.width>n.parent.width+2)).map(n=>({id:n.id,name:n.name,parent:n.parent.name}))};

@@ -1,0 +1,23 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+output/
+coverage/
+.handoff/
+.playwright-cli/
+.env
+.env.*
+!.env.example
+*.log
+*.local
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+
+# 本机会话与工具状态，不属于工程内容
+.zcode/
+.workbuddy/
+
+# 品牌资产原始压缩包：内容已解包进 assets/，不入库
+Chunjun-Brand-Assets-v1.zip

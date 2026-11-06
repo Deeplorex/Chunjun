@@ -1,0 +1,15 @@
+{
+  "jpeg": "jpg.svg",
+  "jpg": "jpg.svg",
+  "png": "png.svg",
+  "webp": "webp.svg",
+  "avif": "avif.svg",
+  "heic": "heic.svg",
+  "heif": "heic.svg",
+  "tif": "tiff.svg",
+  "tiff": "tiff.svg",
+  "gif": "gif.svg",
+  "svg": "svg.svg",
+  "bmp": "../../icons/file.svg",
+  "default": "../../icons/file.svg"
+}

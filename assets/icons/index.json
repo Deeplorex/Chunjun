@@ -1,0 +1,251 @@
+{
+  "grid": 24,
+  "strokeWidth": 1.8,
+  "icons": [
+    {
+      "name": "compress",
+      "label": "压缩",
+      "file": "compress.svg"
+    },
+    {
+      "name": "convert",
+      "label": "转换",
+      "file": "convert.svg"
+    },
+    {
+      "name": "crop",
+      "label": "裁剪",
+      "file": "crop.svg"
+    },
+    {
+      "name": "watermark",
+      "label": "明水印",
+      "file": "watermark.svg"
+    },
+    {
+      "name": "metadata",
+      "label": "元数据",
+      "file": "metadata.svg"
+    },
+    {
+      "name": "scan",
+      "label": "扫描",
+      "file": "scan.svg"
+    },
+    {
+      "name": "image",
+      "label": "图片",
+      "file": "image.svg"
+    },
+    {
+      "name": "file",
+      "label": "文件",
+      "file": "file.svg"
+    },
+    {
+      "name": "folder",
+      "label": "文件夹",
+      "file": "folder.svg"
+    },
+    {
+      "name": "folder-open",
+      "label": "打开文件夹",
+      "file": "folder-open.svg"
+    },
+    {
+      "name": "plus",
+      "label": "添加",
+      "file": "plus.svg"
+    },
+    {
+      "name": "minus",
+      "label": "缩小",
+      "file": "minus.svg"
+    },
+    {
+      "name": "close",
+      "label": "关闭",
+      "file": "close.svg"
+    },
+    {
+      "name": "check",
+      "label": "完成",
+      "file": "check.svg"
+    },
+    {
+      "name": "warning",
+      "label": "警告",
+      "file": "warning.svg"
+    },
+    {
+      "name": "info",
+      "label": "信息",
+      "file": "info.svg"
+    },
+    {
+      "name": "shield",
+      "label": "本地处理",
+      "file": "shield.svg"
+    },
+    {
+      "name": "lock",
+      "label": "锁定",
+      "file": "lock.svg"
+    },
+    {
+      "name": "settings",
+      "label": "设置",
+      "file": "settings.svg"
+    },
+    {
+      "name": "history",
+      "label": "历史",
+      "file": "history.svg"
+    },
+    {
+      "name": "undo",
+      "label": "撤销",
+      "file": "undo.svg"
+    },
+    {
+      "name": "redo",
+      "label": "重做",
+      "file": "redo.svg"
+    },
+    {
+      "name": "rotate-left",
+      "label": "左转",
+      "file": "rotate-left.svg"
+    },
+    {
+      "name": "rotate-right",
+      "label": "右转",
+      "file": "rotate-right.svg"
+    },
+    {
+      "name": "flip-horizontal",
+      "label": "水平翻转",
+      "file": "flip-horizontal.svg"
+    },
+    {
+      "name": "flip-vertical",
+      "label": "垂直翻转",
+      "file": "flip-vertical.svg"
+    },
+    {
+      "name": "download",
+      "label": "导出",
+      "file": "download.svg"
+    },
+    {
+      "name": "upload",
+      "label": "导入",
+      "file": "upload.svg"
+    },
+    {
+      "name": "save",
+      "label": "保存",
+      "file": "save.svg"
+    },
+    {
+      "name": "copy",
+      "label": "复制",
+      "file": "copy.svg"
+    },
+    {
+      "name": "trash",
+      "label": "删除",
+      "file": "trash.svg"
+    },
+    {
+      "name": "refresh",
+      "label": "重试",
+      "file": "refresh.svg"
+    },
+    {
+      "name": "play",
+      "label": "开始",
+      "file": "play.svg"
+    },
+    {
+      "name": "pause",
+      "label": "暂停",
+      "file": "pause.svg"
+    },
+    {
+      "name": "zoom-in",
+      "label": "放大查看",
+      "file": "zoom-in.svg"
+    },
+    {
+      "name": "zoom-out",
+      "label": "缩小查看",
+      "file": "zoom-out.svg"
+    },
+    {
+      "name": "fit",
+      "label": "适应窗口",
+      "file": "fit.svg"
+    },
+    {
+      "name": "compare",
+      "label": "对比",
+      "file": "compare.svg"
+    },
+    {
+      "name": "eye",
+      "label": "显示",
+      "file": "eye.svg"
+    },
+    {
+      "name": "eye-off",
+      "label": "隐藏",
+      "file": "eye-off.svg"
+    },
+    {
+      "name": "chevron-down",
+      "label": "向下",
+      "file": "chevron-down.svg"
+    },
+    {
+      "name": "chevron-left",
+      "label": "向左",
+      "file": "chevron-left.svg"
+    },
+    {
+      "name": "chevron-right",
+      "label": "向右",
+      "file": "chevron-right.svg"
+    },
+    {
+      "name": "edit",
+      "label": "编辑",
+      "file": "edit.svg"
+    },
+    {
+      "name": "brush",
+      "label": "画笔",
+      "file": "brush.svg"
+    },
+    {
+      "name": "grid",
+      "label": "网格",
+      "file": "grid.svg"
+    },
+    {
+      "name": "search",
+      "label": "查找",
+      "file": "search.svg"
+    },
+    {
+      "name": "window",
+      "label": "最大化",
+      "file": "window.svg"
+    },
+    {
+      "name": "restore",
+      "label": "还原",
+      "file": "restore.svg"
+    }
+  ]
+}

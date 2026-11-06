@@ -1,0 +1,148 @@
+{
+  "schemaVersion": "1.5.0",
+  "standardVersion": "2.1.0",
+  "project": {
+    "name": "chunjun",
+    "displayName": "纯钧",
+    "packageScope": "chunjun",
+    "description": "神兵系列 · 离线可用的本地桌面图片处理工具"
+  },
+  "product": {
+    "phase": "partial-implementation",
+    "sourceOfTruth": "docs/product/README.md",
+    "behaviorContract": "design/product-scope.json",
+    "locales": ["zh-CN"],
+    "defaultLocale": "zh-CN"
+  },
+  "architecture": {
+    "selectionStatus": "selected",
+    "selectionMode": "user-approved",
+    "selectedOption": "tauri-local-desktop",
+    "consideredOptions": [
+      {
+        "id": "tauri-local-desktop",
+        "fit": "用户于 2026-11-02 选择。单应用、本地文件处理；系统 WebView 配合 Rust 权限边界，较轻；原生编解码集成工作较多，离线安装须包含缺失的 WebView2 运行时。",
+        "cost": "无云运营费用；需要 Rust 与前端两套工具链。",
+        "delivery": "原生处理集成比 Node 方案慢；按独立切片推进。",
+        "revisitWhen": "样本验证证明必要格式或推理运行库无法在受支持平台可靠封装。"
+      },
+      {
+        "id": "electron-local-desktop",
+        "fit": "Node 图片处理生态易集成，交付较快；随包 Chromium/Node 增加体积与基础内存占用。",
+        "status": "not-selected",
+        "revisitWhen": "仅在 Tauri 原生集成出现已验证的阻塞且用户重新选择时考虑。"
+      }
+    ]
+  },
+  "runtime": {
+    "node": "24.18.0",
+    "pnpm": "9.15.0",
+    "rust": "1.98.0",
+    "typescript": "5.9.3"
+  },
+  "desktop": {
+    "tauri": "2.12.5",
+    "tauriBuild": "2.7.4",
+    "tauriCli": "2.12.4",
+    "tauriApi": "2.12.4",
+    "target": "x86_64-pc-windows-msvc",
+    "minimumOs": "Windows 11"
+  },
+  "ui": {
+    "react": "19.3.1",
+    "vite": "8.3.5",
+    "styling": "CSS + project tokens",
+    "designSystem": "existing Figma components and local brand/icon assets",
+    "tokens": "src/styles/tokens.css"
+  },
+  "units": [
+    {
+      "name": "desktop",
+      "path": "src-tauri",
+      "boundary": "Rust 原生授权、图片处理、受限元数据与导出；未完成项见 docs/reviews/2026-11-04.md"
+    },
+    {
+      "name": "ui",
+      "path": "src",
+      "boundary": "嵌入桌面应用的静态界面，不独立部署"
+    }
+  ],
+  "data": {
+    "mode": "local-files",
+    "current": "本机 settings-v1.json、draft-v1.json、history-v1.json 与剪贴板图片；无数据库服务。",
+    "planned": "原子落盘、损坏恢复、清理与旧版本回退待补齐。",
+    "databaseServer": false
+  },
+  "storage": {
+    "mode": "user-selected-local-directories",
+    "sourcePolicy": "原图只读、副本导出；导出保护与保留能力限制见审查登记。"
+  },
+  "auth": {
+    "mode": "none",
+    "fileAuthorization": "Rust 原生选择/拖放授权；前端业务操作持有授权 ID。"
+  },
+  "async": {
+    "mode": "local-worker-threads",
+    "durableQueue": false,
+    "redis": false
+  },
+  "realtime": {
+    "mode": "local-tauri-events"
+  },
+  "search": {
+    "mode": "none"
+  },
+  "analytics": {
+    "mode": "none"
+  },
+  "deployment": {
+    "selectionStatus": "selected",
+    "mode": "windows-desktop-installer",
+    "environments": ["development", "unsigned-preview", "release"],
+    "installer": "NSIS current-user",
+    "webviewInstallMode": "embedBootstrapper",
+    "signing": "deferred-until-release",
+    "externalPublishing": "not-authorized"
+  },
+  "quality": {
+    "commit": {
+      "stagedFormat": "required",
+      "stagedLint": "required",
+      "messageConvention": "conventional-commits"
+    },
+    "changeTracking": "required",
+    "affectedTests": "required",
+    "bugRegressionTests": "required",
+    "integration": "deferred",
+    "e2e": "deferred",
+    "crossBrowser": "not-applicable-system-webview",
+    "accessibility": "semantic-controls-and-keyboard; focused-verification",
+    "visual": "focused-preview-at-desktop-viewports"
+  },
+  "decisions": [
+    {
+      "id": "ADR-001",
+      "status": "accepted",
+      "classification": "user-selected",
+      "decision": "使用 Tauri 2 + Rust + React 的单个本地桌面应用",
+      "reason": "用户比较安装体积、交付速度、Rust 集成和 WebView2 离线成本后明确选择。",
+      "revisitWhen": "有必要原生依赖无法封装的样本与技术证据，并由用户重新决策。"
+    },
+    {
+      "id": "ADR-002",
+      "status": "accepted",
+      "classification": "user-selected",
+      "decision": "基础 OCR 随包按需加载；增强模型按需安装，支持本地导入；业务通过能力层访问",
+      "reason": "用户选择的工程方案明确包含这一包装策略；兼顾首次离线可用与增强组件体积。当前仅记录方案，尚未集成 OCR。",
+      "revisitWhen": "真实样本精度、CPU 延迟或完整运行库体积无法满足首版发布目标。"
+    },
+    {
+      "id": "ADR-003",
+      "status": "accepted",
+      "classification": "user-selected",
+      "decision": "本次仅初始化框架、规范、技术架构与交接，不编写核心业务代码",
+      "reason": "2026-11-02 初始化时的历史范围。现有代码已继续实现图片处理；当前实现与未完成项以产品文档和审查登记为准。",
+      "revisitWhen": "用户发起下一阶段具体功能开发时按既有设计与架构逐项接入。"
+    }
+  ]
+}

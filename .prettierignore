@@ -1,0 +1,12 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+src-tauri/Cargo.lock
+assets/
+design/
+.handoff/
+output/
+coverage/
+pnpm-lock.yaml
+*.zip

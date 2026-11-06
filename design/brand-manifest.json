@@ -1,0 +1,370 @@
+{
+  "version": "1.0",
+  "date": "2026-11-02",
+  "concept": "叠帧 · 方寸",
+  "brand": {
+    "name": "纯钧",
+    "latin": "CHUNJUN",
+    "concept": "叠帧 · 方寸",
+    "rationale": "用相对而置的取景折角围合中央像素，表达画面边界、处理前后与精确落点。主体为方形、非对称的层次关系，与湛卢的纵向对称剑形区分。",
+    "grid": 96,
+    "ink": "#252E29",
+    "accent": "#276650",
+    "paper": "#F7F7F3",
+    "mint": "#B9D4BF",
+    "markPaths": [
+      "M38 16H72C76.418 16 80 19.582 80 24V58H68V28H38V16Z",
+      "M16 38H28V68H58V80H24C19.582 80 16 76.418 16 72V38Z",
+      "M38 38H58V58H38V38Z"
+    ],
+    "smallPaths": [
+      "M6 2H12C13.105 2 14 2.895 14 4V10H12V4H6V2Z",
+      "M2 6H4V12H10V14H4C2.895 14 2 13.105 2 12V6Z",
+      "M6 6H10V10H6V6Z"
+    ],
+    "alternatives": [
+      {
+        "name": "叠帧 · 方寸",
+        "recommended": true,
+        "meaning": "相对折角与中央像素，适合图片工具与小尺寸图标。"
+      },
+      {
+        "name": "双层画片",
+        "paths": [
+          "M28 16H72C76.418 16 80 19.582 80 24V68H68V28H28V16Z",
+          "M16 32H60V80H24C19.582 80 16 76.418 16 72V32ZM28 44V68H48V44H28Z"
+        ],
+        "meaning": "用前后两张画片表达批处理与前后对比。"
+      },
+      {
+        "name": "取景之窗",
+        "paths": [
+          "M16 16H42V28H28V42H16V16ZM54 16H80V42H68V28H54V16ZM68 54H80V80H54V68H68V54ZM16 54H28V68H42V80H16V54Z",
+          "M38 38H58V58H38V38Z"
+        ],
+        "meaning": "完整取景窗，强调裁剪、尺寸与画面范围。"
+      }
+    ]
+  },
+  "marks": {
+    "standard": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"96\" height=\"96\" viewBox=\"0 0 96 96\"><path d=\"M38 16H72C76.418 16 80 19.582 80 24V58H68V28H38V16Z\" fill=\"#276650\" fill-rule=\"evenodd\"/><path d=\"M16 38H28V68H58V80H24C19.582 80 16 76.418 16 72V38Z\" fill=\"#276650\" fill-rule=\"evenodd\"/><path d=\"M38 38H58V58H38V38Z\" fill=\"#276650\" fill-rule=\"evenodd\"/></svg>",
+    "ink": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"96\" height=\"96\" viewBox=\"0 0 96 96\"><path d=\"M38 16H72C76.418 16 80 19.582 80 24V58H68V28H38V16Z\" fill=\"#252E29\" fill-rule=\"evenodd\"/><path d=\"M16 38H28V68H58V80H24C19.582 80 16 76.418 16 72V38Z\" fill=\"#252E29\" fill-rule=\"evenodd\"/><path d=\"M38 38H58V58H38V38Z\" fill=\"#252E29\" fill-rule=\"evenodd\"/></svg>",
+    "inverse": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"96\" height=\"96\" viewBox=\"0 0 96 96\"><path d=\"M38 16H72C76.418 16 80 19.582 80 24V58H68V28H38V16Z\" fill=\"#F7F7F3\" fill-rule=\"evenodd\"/><path d=\"M16 38H28V68H58V80H24C19.582 80 16 76.418 16 72V38Z\" fill=\"#F7F7F3\" fill-rule=\"evenodd\"/><path d=\"M38 38H58V58H38V38Z\" fill=\"#F7F7F3\" fill-rule=\"evenodd\"/></svg>",
+    "small": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\"><path d=\"M6 2H12C13.105 2 14 2.895 14 4V10H12V4H6V2Z\" fill=\"#276650\" fill-rule=\"evenodd\"/><path d=\"M2 6H4V12H10V14H4C2.895 14 2 13.105 2 12V6Z\" fill=\"#276650\" fill-rule=\"evenodd\"/><path d=\"M6 6H10V10H6V6Z\" fill=\"#276650\" fill-rule=\"evenodd\"/></svg>",
+    "app": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"96\" height=\"96\" viewBox=\"0 0 96 96\"><rect width=\"96\" height=\"96\" rx=\"21\" fill=\"#276650\"/><path d=\"M38 16H72C76.418 16 80 19.582 80 24V58H68V28H38V16Z\" fill=\"#F7F7F3\" fill-rule=\"evenodd\"/><path d=\"M16 38H28V68H58V80H24C19.582 80 16 76.418 16 72V38Z\" fill=\"#F7F7F3\" fill-rule=\"evenodd\"/><path d=\"M38 38H58V58H38V38Z\" fill=\"#F7F7F3\" fill-rule=\"evenodd\"/></svg>",
+    "appLight": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"96\" height=\"96\" viewBox=\"0 0 96 96\"><rect width=\"96\" height=\"96\" rx=\"21\" fill=\"#F7F7F3\"/><path d=\"M38 16H72C76.418 16 80 19.582 80 24V58H68V28H38V16Z\" fill=\"#276650\" fill-rule=\"evenodd\"/><path d=\"M16 38H28V68H58V80H24C19.582 80 16 76.418 16 72V38Z\" fill=\"#276650\" fill-rule=\"evenodd\"/><path d=\"M38 38H58V58H38V38Z\" fill=\"#276650\" fill-rule=\"evenodd\"/></svg>"
+  },
+  "icons": [
+    {
+      "name": "compress",
+      "label": "压缩",
+      "body": "<path d=\"M4 4l6 6m0-5v5H5m15 10l-6-6m0 5v-5h5\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4l6 6m0-5v5H5m15 10l-6-6m0 5v-5h5\"/></svg>"
+    },
+    {
+      "name": "convert",
+      "label": "转换",
+      "body": "<path d=\"M4 7h15m-4-4l4 4-4 4M20 17H5m4-4l-4 4 4 4\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 7h15m-4-4l4 4-4 4M20 17H5m4-4l-4 4 4 4\"/></svg>"
+    },
+    {
+      "name": "crop",
+      "label": "裁剪",
+      "body": "<path d=\"M6 3v15h15M3 6h15v15\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 3v15h15M3 6h15v15\"/></svg>"
+    },
+    {
+      "name": "watermark",
+      "label": "明水印",
+      "body": "<path d=\"M5 5h14M12 5v10M8 15h8M4 20h16\"/><path d=\"M5 18l-1 2 1 2m14-4l1 2-1 2\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 5h14M12 5v10M8 15h8M4 20h16\"/><path d=\"M5 18l-1 2 1 2m14-4l1 2-1 2\"/></svg>"
+    },
+    {
+      "name": "metadata",
+      "label": "元数据",
+      "body": "<path d=\"M8 3H4v18h16V3h-4M8 3v4h8V3H8zM8 11h8M8 15h3M8 18h6\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3H4v18h16V3h-4M8 3v4h8V3H8zM8 11h8M8 15h3M8 18h6\"/></svg>"
+    },
+    {
+      "name": "scan",
+      "label": "扫描",
+      "body": "<path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5M7 12h10\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5M7 12h10\"/></svg>"
+    },
+    {
+      "name": "image",
+      "label": "图片",
+      "body": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 17l5-5 4 4 4-6 5 7\"/><circle cx=\"8\" cy=\"8\" r=\"1\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 17l5-5 4 4 4-6 5 7\"/><circle cx=\"8\" cy=\"8\" r=\"1\"/></svg>"
+    },
+    {
+      "name": "file",
+      "label": "文件",
+      "body": "<path d=\"M14 2H5v20h14V7l-5-5zM14 2v5h5M8 12h8M8 16h6\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H5v20h14V7l-5-5zM14 2v5h5M8 12h8M8 16h6\"/></svg>"
+    },
+    {
+      "name": "folder",
+      "label": "文件夹",
+      "body": "<path d=\"M3 7h7l2-3h8a1 1 0 011 1v14H3z\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 7h7l2-3h8a1 1 0 011 1v14H3z\"/></svg>"
+    },
+    {
+      "name": "folder-open",
+      "label": "打开文件夹",
+      "body": "<path d=\"M3 9V5h7l2 3h9M3 9h19l-3 11H3V9z\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9V5h7l2 3h9M3 9h19l-3 11H3V9z\"/></svg>"
+    },
+    {
+      "name": "plus",
+      "label": "添加",
+      "body": "<path d=\"M12 5v14M5 12h14\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg>"
+    },
+    {
+      "name": "minus",
+      "label": "缩小",
+      "body": "<path d=\"M5 12h14\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/></svg>"
+    },
+    {
+      "name": "close",
+      "label": "关闭",
+      "body": "<path d=\"M6 6l12 12M18 6L6 18\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg>"
+    },
+    {
+      "name": "check",
+      "label": "完成",
+      "body": "<path d=\"M5 12l4 4L19 6\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12l4 4L19 6\"/></svg>"
+    },
+    {
+      "name": "warning",
+      "label": "警告",
+      "body": "<path d=\"M12 3L2 21h20L12 3zM12 9v5m0 3v1\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3L2 21h20L12 3zM12 9v5m0 3v1\"/></svg>"
+    },
+    {
+      "name": "info",
+      "label": "信息",
+      "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v6m0-10v1\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v6m0-10v1\"/></svg>"
+    },
+    {
+      "name": "shield",
+      "label": "本地处理",
+      "body": "<path d=\"M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6z\"/><path d=\"M8 12l3 3 5-6\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6z\"/><path d=\"M8 12l3 3 5-6\"/></svg>"
+    },
+    {
+      "name": "lock",
+      "label": "锁定",
+      "body": "<rect x=\"5\" y=\"10\" width=\"14\" height=\"11\" rx=\"2\"/><path d=\"M8 10V6a4 4 0 018 0v4\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"10\" width=\"14\" height=\"11\" rx=\"2\"/><path d=\"M8 10V6a4 4 0 018 0v4\"/></svg>"
+    },
+    {
+      "name": "settings",
+      "label": "设置",
+      "body": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10l2 2M5 19l2-2M17 7l2-2\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10l2 2M5 19l2-2M17 7l2-2\"/></svg>"
+    },
+    {
+      "name": "history",
+      "label": "历史",
+      "body": "<path d=\"M3 11a9 9 0 119 10M3 4v7h7m2-5v6l4 2\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 11a9 9 0 119 10M3 4v7h7m2-5v6l4 2\"/></svg>"
+    },
+    {
+      "name": "undo",
+      "label": "撤销",
+      "body": "<path d=\"M3 9h11a6 6 0 010 12M3 9l5-5M3 9l5 5\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9h11a6 6 0 010 12M3 9l5-5M3 9l5 5\"/></svg>"
+    },
+    {
+      "name": "redo",
+      "label": "重做",
+      "body": "<path d=\"M21 9H10a6 6 0 000 12M21 9l-5-5M21 9l-5 5\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 9H10a6 6 0 000 12M21 9l-5-5M21 9l-5 5\"/></svg>"
+    },
+    {
+      "name": "rotate-left",
+      "label": "左转",
+      "body": "<path d=\"M3 9a9 9 0 111 9M3 3v6h6M12 7v5l3 2\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9a9 9 0 111 9M3 3v6h6M12 7v5l3 2\"/></svg>"
+    },
+    {
+      "name": "rotate-right",
+      "label": "右转",
+      "body": "<path d=\"M21 9a9 9 0 10-1 9M21 3v6h-6M12 7v5l-3 2\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 9a9 9 0 10-1 9M21 3v6h-6M12 7v5l-3 2\"/></svg>"
+    },
+    {
+      "name": "flip-horizontal",
+      "label": "水平翻转",
+      "body": "<path d=\"M12 3v18M3 5v14l6-7-6-7zm18 0v14l-6-7 6-7z\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v18M3 5v14l6-7-6-7zm18 0v14l-6-7 6-7z\"/></svg>"
+    },
+    {
+      "name": "flip-vertical",
+      "label": "垂直翻转",
+      "body": "<path d=\"M3 12h18M5 3h14l-7 6-7-6zm0 18h14l-7-6-7 6z\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 12h18M5 3h14l-7 6-7-6zm0 18h14l-7-6-7 6z\"/></svg>"
+    },
+    {
+      "name": "download",
+      "label": "导出",
+      "body": "<path d=\"M12 3v12m-5-5l5 5 5-5M4 16v5h16v-5\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v12m-5-5l5 5 5-5M4 16v5h16v-5\"/></svg>"
+    },
+    {
+      "name": "upload",
+      "label": "导入",
+      "body": "<path d=\"M12 15V3m-5 5l5-5 5 5M4 16v5h16v-5\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 15V3m-5 5l5-5 5 5M4 16v5h16v-5\"/></svg>"
+    },
+    {
+      "name": "save",
+      "label": "保存",
+      "body": "<path d=\"M4 3h13l4 4v14H3V3h1zM7 3v6h9V3M7 21v-8h10v8\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 3h13l4 4v14H3V3h1zM7 3v6h9V3M7 21v-8h10v8\"/></svg>"
+    },
+    {
+      "name": "copy",
+      "label": "复制",
+      "body": "<rect x=\"8\" y=\"8\" width=\"13\" height=\"13\" rx=\"2\"/><path d=\"M16 8V3H3v13h5\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"8\" y=\"8\" width=\"13\" height=\"13\" rx=\"2\"/><path d=\"M16 8V3H3v13h5\"/></svg>"
+    },
+    {
+      "name": "trash",
+      "label": "删除",
+      "body": "<path d=\"M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7\"/></svg>"
+    },
+    {
+      "name": "refresh",
+      "label": "重试",
+      "body": "<path d=\"M20 8a9 9 0 00-15-4L3 7m0-5v5h5M4 16a9 9 0 0015 4l2-3m0 5v-5h-5\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 8a9 9 0 00-15-4L3 7m0-5v5h5M4 16a9 9 0 0015 4l2-3m0 5v-5h-5\"/></svg>"
+    },
+    {
+      "name": "play",
+      "label": "开始",
+      "body": "<path d=\"M8 4l12 8-12 8V4z\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 4l12 8-12 8V4z\"/></svg>"
+    },
+    {
+      "name": "pause",
+      "label": "暂停",
+      "body": "<path d=\"M7 4v16M17 4v16\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 4v16M17 4v16\"/></svg>"
+    },
+    {
+      "name": "zoom-in",
+      "label": "放大查看",
+      "body": "<circle cx=\"10\" cy=\"10\" r=\"7\"/><path d=\"M15 15l6 6M7 10h6M10 7v6\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"10\" cy=\"10\" r=\"7\"/><path d=\"M15 15l6 6M7 10h6M10 7v6\"/></svg>"
+    },
+    {
+      "name": "zoom-out",
+      "label": "缩小查看",
+      "body": "<circle cx=\"10\" cy=\"10\" r=\"7\"/><path d=\"M15 15l6 6M7 10h6\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"10\" cy=\"10\" r=\"7\"/><path d=\"M15 15l6 6M7 10h6\"/></svg>"
+    },
+    {
+      "name": "fit",
+      "label": "适应窗口",
+      "body": "<path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5\"/><rect x=\"7\" y=\"7\" width=\"10\" height=\"10\" rx=\"1\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5\"/><rect x=\"7\" y=\"7\" width=\"10\" height=\"10\" rx=\"1\"/></svg>"
+    },
+    {
+      "name": "compare",
+      "label": "对比",
+      "body": "<path d=\"M12 3v18M9 5H3v14h6m6-14h6v14h-6M8 10l-2 2 2 2m8-4l2 2-2 2\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v18M9 5H3v14h6m6-14h6v14h-6M8 10l-2 2 2 2m8-4l2 2-2 2\"/></svg>"
+    },
+    {
+      "name": "eye",
+      "label": "显示",
+      "body": "<path d=\"M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>"
+    },
+    {
+      "name": "eye-off",
+      "label": "隐藏",
+      "body": "<path d=\"M3 3l18 18M6 6C3 8 2 12 2 12s4 7 10 7c2 0 4-1 5-2M10 5h2c6 0 10 7 10 7l-3 4M10 10a3 3 0 004 4\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 3l18 18M6 6C3 8 2 12 2 12s4 7 10 7c2 0 4-1 5-2M10 5h2c6 0 10 7 10 7l-3 4M10 10a3 3 0 004 4\"/></svg>"
+    },
+    {
+      "name": "chevron-down",
+      "label": "向下",
+      "body": "<path d=\"M5 9l7 7 7-7\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 9l7 7 7-7\"/></svg>"
+    },
+    {
+      "name": "chevron-left",
+      "label": "向左",
+      "body": "<path d=\"M15 5l-7 7 7 7\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 5l-7 7 7 7\"/></svg>"
+    },
+    {
+      "name": "chevron-right",
+      "label": "向右",
+      "body": "<path d=\"M9 5l7 7-7 7\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 5l7 7-7 7\"/></svg>"
+    },
+    {
+      "name": "edit",
+      "label": "编辑",
+      "body": "<path d=\"M14 4l6 6-9 9H5v-6zM14 4l2-2 6 6-2 2\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 4l6 6-9 9H5v-6zM14 4l2-2 6 6-2 2\"/></svg>"
+    },
+    {
+      "name": "brush",
+      "label": "画笔",
+      "body": "<path d=\"M13 4l7 7-8 8H5v-7l8-8zM13 4l2-2 7 7-2 2M3 21h5\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 4l7 7-8 8H5v-7l8-8zM13 4l2-2 7 7-2 2M3 21h5\"/></svg>"
+    },
+    {
+      "name": "grid",
+      "label": "网格",
+      "body": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/></svg>"
+    },
+    {
+      "name": "search",
+      "label": "查找",
+      "body": "<circle cx=\"10\" cy=\"10\" r=\"7\"/><path d=\"M15 15l6 6\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"10\" cy=\"10\" r=\"7\"/><path d=\"M15 15l6 6\"/></svg>"
+    },
+    {
+      "name": "window",
+      "label": "最大化",
+      "body": "<rect x=\"5\" y=\"5\" width=\"14\" height=\"14\"/>",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\"/></svg>"
+    }
+  ],
+  "appSizes": [
+    16,
+    20,
+    24,
+    32,
+    40,
+    48,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "filetypes": [
+    "JPG",
+    "PNG",
+    "WEBP",
+    "AVIF",
+    "HEIC",
+    "TIFF",
+    "GIF",
+    "SVG"
+  ]
+}

@@ -1,0 +1,28 @@
+/* Canonical runtime tokens; match Figma page 02 · 组件与规范. */
+:root {
+  --cj-paper: #f7f7f3;
+  --cj-surface: #ffffff;
+  --cj-canvas: #e5e8e1;
+  --cj-rail: #eeefe9;
+  --cj-ink: #252e29;
+  --cj-muted: #68746b;
+  --cj-accent: #276650;
+  --cj-accent-hover: #205640;
+  --cj-soft: #e5efe7;
+  --cj-line: #d6dcd3;
+  --cj-warning: #865a23;
+  --cj-warning-bg: #faefdc;
+  --cj-error: #a23e36;
+  --cj-error-bg: #f8e8e4;
+  --cj-radius: 6px;
+  --cj-font:
+    'Noto Sans SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
+  --cj-space-1: 4px;
+  --cj-space-2: 8px;
+  --cj-space-3: 12px;
+  --cj-space-4: 16px;
+  --cj-space-5: 20px;
+  --cj-space-6: 24px;
+  --cj-space-8: 32px;
+  --cj-space-10: 40px;
+}

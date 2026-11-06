@@ -1,0 +1,39 @@
+[package]
+name = "chunjun"
+version = "0.1.0"
+description = "纯钧 · 本地桌面图片处理工具"
+edition = "2021"
+rust-version = "1.98.0"
+publish = false
+
+[lib]
+name = "chunjun_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "=2.7.4", features = [] }
+
+[dependencies]
+arboard = "3.7.0"
+base64 = "0.23.1"
+color_quant = "2.0.0"
+crc32fast = "1.5.4"
+flate2 = { version = "1.1.10", default-features = false, features = ["rust_backend"] }
+image = { version = "0.25.10", default-features = false, features = ["jpeg", "png", "gif", "bmp", "tiff", "webp"] }
+kamadak-exif = "0.6"
+png = "0.18.1"
+ravif = { version = "0.13.0", default-features = false, features = ["threading"] }
+resvg = "0.49.0"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+swash = "0.2.10"
+tiff = { version = "0.11", default-features = false }
+tauri = { version = "=2.12.5", features = [] }
+tauri-plugin-dialog = "2"
+
+# 体积优先：单编译单元 + LTO + 去符号表。主程序从 ~18MB 降到十几 MB。
+# 不用 opt-level = "s"：图像编码是热路径，降优化级别会明显拖慢批量处理。
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true

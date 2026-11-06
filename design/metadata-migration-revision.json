@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-04",
+  "fileKey": "A1vGeie8es1ZWYTU8dJnIQ",
+  "status": "prepared-not-applied",
+  "note": "本会话无 Figma 写入通道，脚本 design/update-metadata-migration.js 已按既有模式备好，尚未在 Figma 插件控制台执行；不声称已同步。行为以代码与 docs/changes.md 该轮记录为准。",
+  "intent": [
+    {
+      "frames": "5:5 高保真画板（转换类画面）",
+      "change": "删除“颜色配置 保持原样（未接入）”假下拉与“按 EXIF 方向自动旋正”假勾选，替换为一行真实能力说明：ICC 与 EXIF 随 JPEG/PNG 副本自动迁移复检；EXIF 方向烘焙为正向像素。WebP / AVIF 目标不承载这些字段，导出前会请求确认。"
+    },
+    {
+      "frames": "标识检测 11:732 的证据字段表",
+      "change": "“色彩配置”行改为“容器字段”：ICC 存在/未发现 · EXIF N 项 · XMP 存在/未发现 · 方向 N。"
+    },
+    {
+      "frames": "来源/色彩受限确认 50:1465",
+      "change": "从仅“返回调整”的阻断改为可确认损失：标题“部分元数据无法写入目标格式”，列出 EXIF 拍摄信息、ICC 色彩配置、XMP 声明等将丢弃项，提示改用 JPEG/PNG 可完整迁移，按钮“确认并导出 / 返回调整”。"
+    },
+    {
+      "frames": "导出就地展开 11:1250 的格式提示",
+      "change": "选中 WebP/AVIF 时增加一行“WebP / AVIF 副本不承载 EXIF / ICC / XMP，导出前会请求确认。”"
+    }
+  ]
+}
